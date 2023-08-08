@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>To-Do-List</title>
-    <script src="dist/main.js"></script>
+    <script src="./dist/main.js" defer type="module"></script>
 </head>
+
 <body>
-    
+    <template id="project-list">
+        <section class="projects">           
+        </section>
+    </template>
+
+    <template id="single-project">
+        <h2></h2>
+    </template>
+
+    <template id="project-input">
+        <form id="project-form">
+            <label for="project-form">Project Name</label>
+            <input type="text" id="title-project">
+            <button type="submit">Add Project</button>
+        </form>
+    </template>
+
+    <template id="todo-list"></template>
+
+    <template id="todo-input">
+        <form id="new-todo">
+            <label for="new-todo">New Todo</label>
+            <input type="text" id="todo-name">
+            <input type="text" id="todo-description">
+            <input type="date" id="todo-date">
+            <h3>Priority</h3>
+            <div id="todo-input-radio">
+                <input type="radio" name="todo-priority-input" id="todo-priority-high" value="high">
+                <label for="todo-priority-high">high</label>
+                <input type="radio" name="todo-priority-input" id="todo-priority-med" value="med">
+                <label for="todo-priority-med">medium</label>
+                <input type="radio" name="todo-priority-input" id="todo-priority-low" value="low">
+                <label for="todo-priority-low">low</label>
+            </div>
+
+            <button id="todo-edit">Edit</button>
+        </form>
+    </template>
+    <template id="single-todo">
+        <h4 id="todo-name"></h4>
+        <p id="todo-description"></p>
+        <p id="todo-priority"></p>
+        <h5>Priority</h5>
+        <div id="todo-radio">
+            <input type="radio" name="todo-priority" id="todo-priority-high" value="high">
+            <label for="todo-priority-high">high</label>
+            <input type="radio" name="todo-priority" id="todo-priority-med" value="med">
+            <label for="todo-priority-med">medium</label>
+            <input type="radio" name="todo-priority" id="todo-priority-low" value="low">
+            <label for="todo-priority-low">low</label>
+        </div>
+        <button id="todo-edit">Edit</button>
+    </template>
+    <div id="app"></div>
 </body>
+
 </html>
